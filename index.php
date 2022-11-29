@@ -12,7 +12,8 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 include __DIR__ . '/functions/function.php';
 
 
-
+$new_password = passwordGenerator((int)$_GET["passw_length"], $_GET['number'], $_GET['character'], $_GET['symbol']);
+var_dump($new_password);
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ include __DIR__ . '/functions/function.php';
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer'>
     <link rel='stylesheet' href=''>
     <style>
-        .container {}
+        /* .container {} */
 
         .left {
             flex-direction: column;
@@ -50,10 +51,11 @@ include __DIR__ . '/functions/function.php';
             opacity: 80%;
         }
 
+        /* 
         body {
-            /* background-color: darkblue; */
+             background-color: darkblue; 
         }
-
+        */
         .row {
             justify-content: center;
         }
@@ -75,6 +77,7 @@ include __DIR__ . '/functions/function.php';
                         <h2>Genera una password sicura</h2>
 
                     </div>
+
                 </div>
 
             </div>
@@ -82,17 +85,43 @@ include __DIR__ . '/functions/function.php';
                 <div class="row">
                     <div class="col-8 left d-flex">
                         <div class="text info d-flex">
-                            <label for="passw_lenght" class="col-form-label">Lunghezza password :</label>
+                            <label for="passw_length" class="col-form-label">Lunghezza password :</label>
                             <label for="repeat_character" class="col-form-label">Consenti ripetizioni di uono o più caratteri :</label>
+
                         </div>
                         <div class="button ">
-                            <input name="" id="" class="btn btn-primary" type="button" value="Button">
+                            <input name="" id="" class="btn btn-primary" type="submit" value="Button">
                         </div>
 
                     </div>
                     <div class="col-4">
-                        <input type="number" name="passw_lenght" id="passw_lenght">
-                        <!-- <input type="submit" value=""> -->
+                        <div class="choise">
+                            <div class="info-lenght">
+                                <!-- setta la lunghezza -->
+                                <input type="number" name="passw_length" id="passw_length">
+
+                            </div>
+
+                            <!-- <input type="submit" value=""> -->
+                            <div class="check">
+
+                                <div>
+
+                                    <input type="checkbox" name="number" id="number">
+                                    <label for="number">Numeri</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="character" id="character">
+                                    <label for="character">Lettere</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" name="symbol" id="symbol">
+                                    <label for="symbol">Simboli</label>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </form>
@@ -103,8 +132,8 @@ include __DIR__ . '/functions/function.php';
     <!-- /#site_footer -->
 
 
-    <script src='https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js'></script>
-    <script src=''></script>
+    <!-- <script src='https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.min.js'></script> -->
+    <!-- <script src=''></script> -->
 </body>
 
 </html>
