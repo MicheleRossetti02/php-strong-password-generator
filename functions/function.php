@@ -1,6 +1,7 @@
 <?php
 function passwordGenerator($lunghezza, $numeri, $caratteri, $simboli)
 {
+
     $passw = '';
     $caratteri = 'abcdefghijklmnopqrstuvwxyzèàòùABDEFGHILMNOPQRSTVUZJKWXY';
     $simboli = '<>,.-+^?=)(/&%$£"!|\;:_§';
@@ -15,5 +16,4 @@ function passwordGenerator($lunghezza, $numeri, $caratteri, $simboli)
         }
     }
     return $passw;
-    var_dump($passw);
 }
